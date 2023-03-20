@@ -53,6 +53,10 @@
             string var4 = dataTableManger.RetrieveCountBasedOnCityorState();
             Console.WriteLine("Success" + varl);
             dataTableManger.Display();
+
+            //UC-07------>sort based on name in data table
+            string var5 = dataTableManger.SortBasedOnNameInDataTable("Mumbai");
+            Console.WriteLine("Success" + varl);
         }
     }
 }
