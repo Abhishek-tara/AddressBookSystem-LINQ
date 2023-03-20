@@ -43,6 +43,11 @@
             //UC-04----->Delete
             int var2 = dataTableManger.DeleteRowInDataTable("Abhi");
             Console.WriteLine("Success" + varl);
+
+
+            //UC-05---->Retrieve based on city or state
+            string var3 = dataTableManger.RetrieveBasedOnCityorState("Bareilly", "MH");
+            Console.WriteLine("Success" + varl);
             dataTableManger.Display();
         }
     }
