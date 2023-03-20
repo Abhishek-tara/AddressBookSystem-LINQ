@@ -33,6 +33,11 @@
             contactDataManagers.State = "MH";
             contactDataManagers.zip = 123001;
             dataTableManger.InsertintoDataTable(contactDataManagers);
+
+
+            //UC-03---->Modify
+            int varl = dataTableManger.EditDataTable("lalita", "Lastname");
+            Console.WriteLine("Success" + varl);
             dataTableManger.Display();
         }
     }

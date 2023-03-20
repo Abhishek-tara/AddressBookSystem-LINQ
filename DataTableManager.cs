@@ -124,8 +124,8 @@ namespace AddressBookSystem_LINQ
             ContactDataManager contactDataManager = new ContactDataManager();
             ContactDataManager contactDataManagers = new ContactDataManager();
             //Insert Values into Table
-            contactDataManager.FirstName = "Rinku";
-            contactDataManager.LastName = "Berde";
+            contactDataManager.FirstName = "Abhi";
+            contactDataManager.LastName = "Mane";
             contactDataManager.PhoneNumber = 1234567890;
             contactDataManager.Email = "rinku@gmail.com";
             contactDataManager.Address = "4,B Block,SP Nagar";
@@ -163,6 +163,22 @@ namespace AddressBookSystem_LINQ
             custTable.Rows.Add(dtRow);
 
         }
+
+        //UC03------->Ability to edit existing contact person using their name
+        public int EditDataTable(string FirstName, string ColumnName)
+        {
+            AddValues();
+            var modifiedList = (from ContactList in custTable.AsEnumerable() where ContactList.Field<string>("FirstName") == FirstName select ContactList).FirstOrDefault();
+            if (modifiedList != null)
+            {
+                modifiedList[ColumnName] = "Sing";
+                Display();
+                return 1;
+            }
+            else return 0;
+        }
+
+
         //Display all Values in DataRow
         public void Display()
         {
